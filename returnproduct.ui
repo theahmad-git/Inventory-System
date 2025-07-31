@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>returnproduct</class>
+ <widget class="QWidget" name="returnproduct">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                            stop:0 #e3f2fd, stop:1 #bbdefb);
+</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>681</width>
+     <height>471</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QDateTimeEdit" name="dateTimeEdit">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_9">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+background-color: #E67E22;  /* Medium gray */
+color: white;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Bill Id:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_billId">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_product_id">
+        <property name="styleSheet">
+         <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Product ID:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_product_id">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_defective">
+          <property name="styleSheet">
+           <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Defective:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBox_defective">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Yes</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>No</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_quantity">
+          <property name="styleSheet">
+           <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Quantity</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="spinBox_quantity"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_producttotalamount">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: #D2B48C;  /* Light brown (tan) */
+    color: black;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Product total amount</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_producttotalamount">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_discount">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+background-color: #E67E22;  /* Medium gray */
+color: white;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Discount:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_discount">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QLabel" name="label_totalamountreturn">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    background-color: #D2B48C;  /* Light brown (tan) */
+    color: black;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Total amount return</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_totalamountreturn">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Feedback:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_feedback">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <item>
+       <widget class="QPushButton" name="pushButton_return">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+;
+font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Return</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

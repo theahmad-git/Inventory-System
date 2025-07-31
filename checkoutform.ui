@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Checkoutform</class>
+ <widget class="QWidget" name="Checkoutform">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                            stop:0 #e3f2fd, stop:1 #bbdefb);
+</string>
+  </property>
+  <widget class="QSplitter" name="splitter">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>941</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+   <widget class="QWidget" name="layoutWidget">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="lastScanLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="productInfoLabel">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tablewidgetproduct">
+       <property name="styleSheet">
+        <string notr="true">
+QTableWidget {
+    background-color: #E6F2FF; /* Light blue for even rows */
+alternate-background-color: #B5D6F5;
+
+}
+
+QHeaderView::section {
+    background-color: #3498DB;  /* Optional: blue header */
+    color: white;
+    font-weight: bold;
+}
+</string>
+       </property>
+       <property name="inputMethodHints">
+        <set>Qt::InputMethodHint::ImhMultiLine</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QSpinBox" name="quantitybox">
+         <property name="styleSheet">
+          <string notr="true">QSpinBox {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+QSpinBox:focus {
+    border: 1px solid #3498DB;
+    background-color: white;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_addtocart">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+    color: white;
+font-size: 10px;
+ font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Add</string>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::ListAdd"/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_remove">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    background-color: #E74C3C;  /* Bright red */
+    color: white;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: #C0392B;  /* Darker red on hover */
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Remove</string>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::EditDelete"/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Search by ID</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_searchproduct">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::InputMethodHint::ImhMultiLine</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tablewidgetcart">
+       <property name="styleSheet">
+        <string notr="true">
+QTableWidget {
+    background-color: #E6F2FF; /* Light blue for even rows */
+alternate-background-color: #B5D6F5;
+
+}
+
+QHeaderView::section {
+    background-color: #3498DB;  /* Optional: blue header */
+    color: white;
+    font-weight: bold;
+}
+</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QPushButton" name="pushButton_clearform">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+;
+font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Clear Form</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QDateTimeEdit" name="dateTimeEdit">
+       <property name="styleSheet">
+        <string notr="true">QDateEdit, QTimeEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 4px;
+    padding: 3px 5px;
+}
+
+QDateEdit:focus, QTimeEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: white;
+}
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="textEdit_receipt">
+       <property name="styleSheet">
+        <string notr="true">QTextEdit {
+    background-color: #FDFEFE;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 5px;
+    padding: 8px;
+    font-family: Consolas, monospace;
+    font-size: 13px;
+}
+</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+background-color: #E67E22;  /* Medium gray */
+color: white;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Discount:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_discount">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_totalafterdiscount">
+         <property name="styleSheet">
+          <string notr="true">QLabel {
+    background-color: #D2B48C;  /* Light brown (tan) */
+    color: black;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}</string>
+         </property>
+         <property name="text">
+          <string>Total Amount:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_totalafterdiscount">
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QPushButton" name="pushButton_generatebill">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+background-color: #7F8C8D;  /* Medium gray */
+color: white;
+ font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+}
+
+QPushButton:hover {
+background-color: #626567;  /* Darker gray */
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Generate Bill</string>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::Printer"/>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_paynow">
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+;
+font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Pay Now</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>editadmin</class>
+ <widget class="QWidget" name="editadmin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1080</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                            stop:0 #e3f2fd, stop:1 #bbdefb);
+</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>291</width>
+     <height>601</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTableWidget" name="tableWidget_admincheck">
+      <property name="styleSheet">
+       <string notr="true">
+QTableWidget {
+    background-color: #E6F2FF; /* Light blue for even rows */
+alternate-background-color: #B5D6F5;
+
+}
+
+QHeaderView::section {
+    background-color: #3498DB;  /* Optional: blue header */
+    color: white;
+    font-weight: bold;
+}
+</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Search Username:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_4">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_searchadmin">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+    color: white;
+ font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Search</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_deleteadmin">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: #E74C3C;  /* Bright red */
+    color: white;
+ font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: #C0392B;  /* Darker red on hover */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="styleSheet">
+           <string notr="true">QLabel {
+background-color:#5D6D7E;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 12px;
+    font-weight: bold;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Add New Admin:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="styleSheet">
+           <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>UserEmail:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_5">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_4">
+          <property name="styleSheet">
+           <string notr="true">
+QLabel {
+background-color: #3498DB;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Password:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_2">
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_addadmin">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+    color: white;
+ font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

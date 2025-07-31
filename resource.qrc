@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/plane backgroung.png</file>
+    </qresource>
+</RCC>
