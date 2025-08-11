@@ -23,7 +23,7 @@ payment::payment(QWidget *parent)
     connect(ui->comboBox_method, &QComboBox::currentTextChanged,
             this, &payment::updatePaymentFieldsVisibility);
 
-        QRect screenGeometry = QApplication::primaryScreen()->geometry();
+    QRect screenGeometry = QApplication::primaryScreen()->geometry();
     this->setGeometry(screenGeometry);
 
 
@@ -49,7 +49,7 @@ void payment::setCardPin(const QString &pin) {
 }
 
 void payment::setTotalAmount(const QString &amount) {
-   ui->lineEdit_actualTotal->setText(amount);
+    ui->lineEdit_actualTotal->setText(amount);
 }
 
 void payment::setCashGiven(const QString &amount) {
@@ -112,7 +112,7 @@ void payment::on_lineEdit_cashgiven_textChanged(const QString &arg1) {
 
 void payment::on_pushButton_backtocheckoutform_clicked()
 {
-    Checkoutform *back = new Checkoutform();
+    Checkoutform *back = new Checkoutform(nullptr, this);
     back->show();
     this->close();
 }
@@ -237,7 +237,7 @@ void payment::on_pushButton_paymeny_clicked()
     }
 
     //receipt += "Amount Paid: Rs. " + givenStr + "\n";
-   // receipt += "Amount Return: Rs. " + returnedStr + "\n";
+    // receipt += "Amount Return: Rs. " + returnedStr + "\n";
 
     QDateTime local = QDateTime::currentDateTime();
     local.setTimeSpec(Qt::LocalTime);
@@ -302,4 +302,10 @@ void payment::extractInfoFromReceipt()
     ui->lineEdit_discountAmount->setText(QString::number(discountAmount, 'f', 2));
 
     updateCashReturn();
+}
+
+void payment::on_pushButton_extractinfo_clicked()
+{
+    // Implement the extract info button functionality
+    extractInfoFromReceipt(); // You already have this function
 }

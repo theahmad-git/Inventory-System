@@ -1,94 +1,96 @@
-QT += core gui
-QT +=sql
-QT += core gui network
-QT += core gui network
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core gui widgets network sql
 
 CONFIG += c++17
 
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+CONFIG -= qtquickcompiler
+QT += axcontainer
+QT +=sql
+QT += core gui sql
+QT += widgets
+# QXlsx Configuration (Choose ONE approach below)
 
-SOURCES += \
-    adminaction.cpp \
-    admineditableinv.cpp \
-    adminlogin.cpp \
-    adminpanel.cpp \
-    baradmin.cpp \
-    barcodescanner.cpp \
-    changepassword.cpp \
-    checkoutform.cpp \
-    editadmin.cpp \
-    forgetpassword.cpp \
-    globals.cpp \
-    inventorypanel.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    payment.cpp \
-    returnproduct.cpp \
-    salesreportform.cpp \
-    signup.cpp \
-    signupadmin.cpp \
-    stockavailibility.cpp \
-    superadmin.cpp \
-    superadminpanel.cpp \
-    userchoice.cpp \
-    userlogin.cpp
+# APPROACH 1: Link against pre-built QXlsx (Recommended)
+DEFINES += QXLSX_STATIC
+LIBS += -LE:/Inventory/Project1/QXlsx/QXlsx/release -lQXlsx
+INCLUDEPATH += E:/Inventory/Project1/QXlsx/QXlsx/header
+
+# Zint Barcode Library
+INCLUDEPATH += E:/Inventory/Project1/zint/backend
+LIBS += -LE:/Inventory/Project1/zint/build/backend -lzint
+
+# Zint include paths
+INCLUDEPATH += E:/Inventory/Project1/zint/backend_qt
+#INCLUDEPATH += E:/Inventory/Project1/zint/backend
+FORMS += E:/Inventory/Project1/zint/frontend_qt/mainWindow.ui
+
+
+# QZXing integration
+include($$PWD/qzxing/QZXing.pri)
+INCLUDEPATH += $$PWD/qzxing/src
+
+#HEADERS += $$files($$PWD/*.h, true)
+
+QXLSX_SOURCEPATH = E:/Inventory/Project1/QXlsx/QXlsx/source/
 
 HEADERS += \
-    adminaction.h \
-    admineditableinv.h \
-    adminlogin.h \
-    adminpanel.h \
-    baradmin.h \
-    barcodescanner.h \
-    changepassword.h \
-    checkoutform.h \
-    editadmin.h \
-    forgetpassword.h \
-    globals.h \
-    inventorypanel.h \
     mainwindow.h \
-    payment.h \
+    salesreportform_new.h \
+    admineditableinv.h \
+    editadmin.h \
     returnproduct.h \
-    salesreportform.h \
     signup.h \
     signupadmin.h \
     stockavailibility.h \
     superadmin.h \
     superadminpanel.h \
     userchoice.h \
-    userlogin.h
+    userlogin.h \
+    adminaction.h \
+    adminpanel.h \
+    checkoutform.h \
+    baradmin.h \
+    inventorypanel.h \
+    adminlogin.h \
+    payment.h \
+    changepassword.h \
+    forgetpassword.h \
+    barcodescanner.h \
+    backupmanager.h \
 
-FORMS += \
-    adminaction.ui \
-    admineditableinv.ui \
-    adminlogin.ui \
-    adminpanel.ui \
-    baradmin.ui \
-    changepassword.ui \
-    checkoutform.ui \
-    editadmin.ui \
-    forgetpassword.ui \
-    inventorypanel.ui \
-    mainwindow.ui \
-    payment.ui \
-    returnproduct.ui \
-    salesreportform.ui \
-    signup.ui \
-    signupadmin.ui \
-    stockavailibility.ui \
-    superadmin.ui \
-    superadminpanel.ui \
-    userchoice.ui \
-    userlogin.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+SOURCES += \
+    salesreportform_new.cpp \
+    admineditableinv.cpp \
+    editadmin.cpp \
+    returnproduct.cpp \
+    signup.cpp \
+    signupadmin.cpp \
+    stockavailibility.cpp \
+    superadmin.cpp \
+    superadminpanel.cpp \
+    userchoice.cpp \
+    userlogin.cpp \
+    adminaction.cpp \
+    mainwindow.cpp \
+    adminpanel.cpp \
+    checkoutform.cpp \
+    baradmin.cpp \
+    inventorypanel.cpp \
+    adminlogin.cpp \
+    payment.cpp \
+    changepassword.cpp \
+    forgetpassword.cpp \
+    barcodescanner.cpp \
+    main.cpp \
+    globals.cpp \
+    backupmanager.cpp \
+    $${QXLSX_SOURCEPATH}xlsxformat.cpp \
+    $${QXLSX_SOURCEPATH}xlsxdocument.cpp
+
+
+FORMS += $$files($$PWD/*.ui, true)
 
 RESOURCES += \
     New_resource.qrc
+
+

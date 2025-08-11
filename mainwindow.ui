@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1920</width>
-    <height>742</height>
+    <height>1080</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -27,8 +27,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1920</width>
-    <height>1080</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -50,9 +50,9 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>250</y>
-      <width>331</width>
+      <x>410</x>
+      <y>280</y>
+      <width>351</width>
       <height>151</height>
      </rect>
     </property>
@@ -75,7 +75,7 @@ QPushButton:hover {
 </string>
        </property>
        <property name="text">
-        <string>Log In as User</string>
+        <string>Log In as Cashier</string>
        </property>
       </widget>
      </item>

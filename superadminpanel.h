@@ -1,30 +1,33 @@
+
+
 #ifndef SUPERADMINPANEL_H
 #define SUPERADMINPANEL_H
-#include "editadmin.h"
-#include "adminaction.h"
-#include <QTreeWidgetItem>
 
 #include <QDialog>
+#include <QTreeWidgetItem>
 
+// Forward declarations
 namespace Ui {
 class superadminpanel;
 }
+
+class editadmin;
+class adminaction;
 
 class superadminpanel : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit superadminpanel(QWidget *parent = nullptr);
+    explicit superadminpanel(QWidget *parent = nullptr);  // Changed to QDialog*
     ~superadminpanel();
 
 private slots:
-
     void on_pushButton_editadmin_clicked();
-
     void on_pushButton_adminaction_clicked();
-
-    void handleSidebarClick(QTreeWidgetItem *item, int);
+    void handleSidebarClick(QTreeWidgetItem *item, int column);
+    void createManualBackup();
+    void restoreFromBackup();
 
 private:
     Ui::superadminpanel *ui;

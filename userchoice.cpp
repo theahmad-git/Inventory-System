@@ -48,7 +48,7 @@ void userchoice::handleSidebarClick(QTreeWidgetItem *item, int)
    QString text = item->text(0);
 
     if (text == "🛒 Sale Product") {
-        Checkoutform *checkout = new Checkoutform();
+        Checkoutform *checkout = new Checkoutform(nullptr, this);
         int index = ui->stackedWidget_form->addWidget(checkout);
         ui->stackedWidget_form->setCurrentIndex(index);
     }
@@ -76,7 +76,7 @@ userchoice::~userchoice()
 void userchoice::on_pushButton_buyproduct_clicked()
 {
     hide();
-    checkout =new Checkoutform(this);
+    checkout =new Checkoutform(nullptr, this);
     checkout->show();
 }
 

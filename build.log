@@ -1,0 +1,34 @@
+mingw32-make -f Makefile.Release
+mingw32-make[1]: Entering directory 'E:/Inventory/Project1'
+Makefile.Release:5062: warning: overriding recipe for target 'ui_salesreportform_new.h'
+Makefile.Release:5006: warning: ignoring old recipe for target 'ui_salesreportform_new.h'
+E:\QT\6.9.1\mingw_64\bin\uic.exe salesreportform_new.ui -o ui_salesreportform_new.h
+salesreportform_new.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+salesreportform_new.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+E:\QT\6.9.1\mingw_64\bin\uic.exe adminaction.ui -o ui_adminaction.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe admineditableinv.ui -o ui_admineditableinv.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe adminlogin.ui -o ui_adminlogin.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe adminpanel.ui -o ui_adminpanel.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe baradmin.ui -o ui_baradmin.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe changepassword.ui -o ui_changepassword.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe checkoutform.ui -o ui_checkoutform.h
+checkoutform.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+E:\QT\6.9.1\mingw_64\bin\uic.exe editadmin.ui -o ui_editadmin.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe forgetpassword.ui -o ui_forgetpassword.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe inventorypanel.ui -o ui_inventorypanel.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe mainwindow.ui -o ui_mainwindow.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe payment.ui -o ui_payment.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe returnproduct.ui -o ui_returnproduct.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe signup.ui -o ui_signup.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe signupadmin.ui -o ui_signupadmin.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe stockavailibility.ui -o ui_stockavailibility.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe superadmin.ui -o ui_superadmin.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe superadminpanel.ui -o ui_superadminpanel.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe userchoice.ui -o ui_userchoice.h
+E:\QT\6.9.1\mingw_64\bin\uic.exe userlogin.ui -o ui_userlogin.h
+g++ -c -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN -I. -IQXlsx/header -IQXlsx/source -Izint/backend -Iqzxing/src -I../../QT/6.9.1/mingw_64/include -I../../QT/6.9.1/mingw_64/include/QtWidgets -I../../QT/6.9.1/mingw_64/include/QtGui -I../../QT/6.9.1/mingw_64/include/QtSql -I../../QT/6.9.1/mingw_64/include/QtNetwork -I../../QT/6.9.1/mingw_64/include/QtCore -Irelease -I. -I/include -I../../QT/6.9.1/mingw_64/mkspecs/win32-g++  -o release\*.o E:/Inventory/Project1/QXlsx/source/*.cpp
+g++: fatal error: cannot specify '-o' with '-c', '-S' or '-E' with multiple files
+compilation terminated.
+mingw32-make[1]: *** [Makefile.Release:5105: release/*.o] Error 1
+mingw32-make[1]: Leaving directory 'E:/Inventory/Project1'
+mingw32-make: *** [Makefile:45: release] Error 2

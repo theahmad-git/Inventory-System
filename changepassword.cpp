@@ -7,6 +7,7 @@
 #include <QString>
 #include <QScreen>
 #include <QApplication>
+#include <QTreeWidgetItem>
 
 changepassword::changepassword(QWidget *parent)
     : QDialog(parent)

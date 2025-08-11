@@ -1,11 +1,22 @@
 #ifndef CHECKOUTFORM_H
 #define CHECKOUTFORM_H
 
-#include "payment.h"
-#include <QDialog>
+#include <QWidget>
+// Forward declaration instead of include
+class MainWindow;
+class payment;
 
+struct Product {
+    QString id;
+    QString name;
+    double price;
+    int quantity;
+    QString size;
 
-class BarcodeScanner;
+    bool isValid() const {
+        return !id.isEmpty() && price > 0;
+    }
+};
 
 namespace Ui {
 class Checkoutform;
@@ -14,12 +25,17 @@ class Checkoutform;
 class Checkoutform : public QWidget
 {
     Q_OBJECT
-
 public:
-    explicit Checkoutform(QWidget *parent = nullptr);
+    explicit Checkoutform(MainWindow *mainWindow, QWidget *parent = nullptr);
     ~Checkoutform();
+
 protected:
     bool eventFilter(QObject *obj, QEvent *event) override;
+
+public slots:
+    void handleBarcode(const QString &barcode);
+    void addToCart(const Product &product);
+
 private slots:
 
     void on_pushButton_addtocart_clicked();

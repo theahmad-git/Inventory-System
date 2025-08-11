@@ -345,54 +345,6 @@ QLineEdit::placeholder {
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_8">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="styleSheet">
-           <string notr="true">QLabel {
-background-color: #E67E22;  /* Medium gray */
-color: white;
- font-weight: bold;
-font-size: 10px;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>Card Pin:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lineEdit_cardpin">
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-    background-color: #ECF0F1;
-    color: #2C3E50;
-    border: 1px solid #BDC3C7;
-    border-radius: 3px;
-    padding: 2px 4px;
-    font-size: 12px;
-    min-height: 20px; /* reduce height */
-}
-
-QLineEdit:focus {
-    border: 1px solid #3498DB;
-    background-color: #FFFFFF;
-}
-
-QLineEdit::placeholder {
-    color: #95A5A6;
-    font-style: italic;
-}
-</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
          <widget class="QLabel" name="label_3">

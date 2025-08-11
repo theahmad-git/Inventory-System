@@ -3,6 +3,7 @@
 #include "userlogin.h"
 #include "payment.h"
 #include "userchoice.h"
+#include "mainwindow.h"
 #include <QDoubleValidator>
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -19,11 +20,19 @@
 #include <QTableWidget>
 #include <QShortcut>
 
-Checkoutform::Checkoutform(QWidget *parent) :
+Checkoutform::Checkoutform(MainWindow *mainWindow, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Checkoutform)
+
 {
     ui->setupUi(this);
+
+    // Only setup barcode handler if mainWindow is provided
+    if(mainWindow) {
+        mainWindow->setBarcodeHandler(this);
+        connect(mainWindow, &MainWindow::barcodeScanned,
+                this, &Checkoutform::handleBarcode);
+    }
 
     QShortcut *deleteShortcut = new QShortcut(QKeySequence(Qt::Key_Delete), this);
     connect(deleteShortcut, &QShortcut::activated, this, &Checkoutform::confirmAndRemoveCartItem);
@@ -102,6 +111,68 @@ Checkoutform::~Checkoutform()
     delete ui;
 }
 
+void Checkoutform::addToCart(const Product &product) {
+    // Check if already in cart
+    for (int i = 0; i < ui->tablewidgetcart->rowCount(); i++) {
+        if (ui->tablewidgetcart->item(i, 0)->text() == product.id) {
+            QMessageBox::information(this, "Notice", "Product already in cart");
+            return;
+        }
+    }
+
+    int newRow = ui->tablewidgetcart->rowCount();
+    ui->tablewidgetcart->insertRow(newRow);
+
+    // Add product to cart table
+    QTableWidgetItem *item = new QTableWidgetItem(product.id);
+    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+    ui->tablewidgetcart->setItem(newRow, 0, item);
+
+    item = new QTableWidgetItem(product.name);
+    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+    ui->tablewidgetcart->setItem(newRow, 1, item);
+
+    item = new QTableWidgetItem(QString::number(product.price));
+    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+    ui->tablewidgetcart->setItem(newRow, 2, item);
+
+    QTableWidgetItem *qtyItem = new QTableWidgetItem("1");
+    qtyItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEditable | Qt::ItemIsEnabled);
+    ui->tablewidgetcart->setItem(newRow, 3, qtyItem);
+
+    item = new QTableWidgetItem(QString::number(product.price));
+    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+    ui->tablewidgetcart->setItem(newRow, 4, item);
+
+    updateTotalAmount();
+}
+void Checkoutform::handleBarcode(const QString &barcode) {
+    // Search product in database
+    QSqlQuery query;
+    query.prepare("SELECT product_id, name, price, quantity FROM product WHERE product_id = ? OR barcode = ?");
+    query.addBindValue(barcode);
+    query.addBindValue(barcode);
+
+    Product product;
+    if (query.exec() && query.next()) {
+        product.id = query.value(0).toString();
+        product.name = query.value(1).toString();
+        product.price = query.value(2).toDouble();
+        product.quantity = query.value(3).toInt();
+    }
+
+    if (product.isValid()) {
+        addToCart(product);
+        if (ui->barcodeLineEdit) {
+            ui->barcodeLineEdit->setText(barcode);
+        }
+    } else {
+        QMessageBox::warning(this, "Not Found", "Product not found!");
+        if (ui->barcodeLineEdit) {
+            ui->barcodeLineEdit->clear();
+        }
+    }
+}
 bool Checkoutform::eventFilter(QObject *obj, QEvent *event)
 {
     // Handle double-click on product table viewport
@@ -591,4 +662,14 @@ void Checkoutform::on_lineEdit_searchproduct_textChanged(const QString &searchpr
     }
 }
 
+void Checkoutform::on_quantitybox_textChanged(const QString &arg1)
+{
+    // Handle quantity box text changes here
+    // For example:
+    bool ok;
+    int quantity = arg1.toInt(&ok);
+    if (!ok || quantity <= 0) {
+        ui->quantitybox->setValue(1); // Reset to default if invalid
+    }
+}
 

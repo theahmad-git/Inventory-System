@@ -98,7 +98,7 @@ font-size: 10px;
 </string>
         </property>
         <property name="text">
-         <string>UserEmail</string>
+         <string>CashierEmail:</string>
         </property>
        </widget>
       </item>
@@ -148,7 +148,7 @@ font-size: 10px;
 </string>
         </property>
         <property name="text">
-         <string>Password</string>
+         <string>Password:</string>
         </property>
        </widget>
       </item>

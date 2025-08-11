@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>salesreportform</class>
+ <widget class="QWidget" name="salesreportform">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1920</width>
+    <height>1023</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1,
+                            stop:0 #e3f2fd, stop:1 #bbdefb);
+</string>
+  </property>
+  <widget class="QSplitter" name="splitter_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>961</width>
+     <height>631</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Vertical</enum>
+   </property>
+   <widget class="QSplitter" name="splitter">
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">
+
+QLabel {
+background-color:#5D6D7E;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 12px;
+    font-weight: bold;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Top selling products:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTableWidget" name="tableWidget_topProducts">
+        <property name="styleSheet">
+         <string notr="true">
+QTableWidget {
+    background-color: #E6F2FF; /* Light blue for even rows */
+alternate-background-color: #B5D6F5;
+
+}
+
+QHeaderView::section {
+    background-color: #3498DB;  /* Optional: blue header */
+    color: white;
+    font-weight: bold;
+}
+
+</string>
+        </property>
+        <property name="columnCount">
+         <number>3</number>
+        </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <column/>
+        <column/>
+        <column/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_from">
+            <property name="styleSheet">
+             <string notr="true">
+QLabel {
+background-color: #F1C40F;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>From:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="timeEdit_from"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_to">
+            <property name="styleSheet">
+             <string notr="true">
+QLabel {
+background-color: #F1C40F;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 10px;
+    font-weight: bold;
+}
+</string>
+            </property>
+            <property name="text">
+             <string>To:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTimeEdit" name="timeEdit_to"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCalendarWidget" name="calendarWidget">
+        <property name="styleSheet">
+         <string notr="true">QCalendarWidget {
+    background-color: white;
+    color: black;
+}
+QCalendarWidget QAbstractItemView:enabled {
+    background-color: white;
+    color: black;
+    selection-background-color: #87CEFA;
+    selection-color: black;
+}
+QCalendarWidget QToolButton {
+    color: black;
+    background-color: lightgray;
+}
+QCalendarWidget QMenu {
+    background-color: white;
+    color: black;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QComboBox" name="comboBox_createBackup">
+          <item>
+           <property name="text">
+            <string>Sales</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Inventory</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Admin</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cashier</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_createBackup">
+          <property name="styleSheet">
+           <string notr="true">QPushButton{
+background-color: #E67E22;  /* Medium gray */
+color: white;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Create Backup</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_check">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: #E67E22;  /* Medium gray */
+color: white;
+ font-weight: bold;
+font-size: 10px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Check</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="textEdit"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="styleSheet">
+            <string notr="true">
+
+QLabel {
+background-color:#5D6D7E;  /* Medium gray */
+color: white;
+
+    border-radius: 5px;
+    padding: 5px 10px;
+font-size: 12px;
+    font-weight: bold;
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Check All Return Sales:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Preferred</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>475</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QComboBox" name="comboBox">
+           <item>
+            <property name="text">
+             <string>Search All Columns</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Search By Bill No</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Search By Product ID</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Search Defective</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit_searchproduct">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+             <horstretch>10</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    border: 1px solid #BDC3C7;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 12px;
+    min-height: 20px; /* reduce height */
+}
+
+QLineEdit:focus {
+    border: 1px solid #3498DB;
+    background-color: #FFFFFF;
+}
+
+QLineEdit::placeholder {
+    color: #95A5A6;
+    font-style: italic;
+}
+</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_clear">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+             <horstretch>10</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+ background-color: #27AE60;  /* Emerald green */
+    background-color: #2ECC71;  /* Light green */
+    color: white;
+ font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+background-color: #1E8449;  /* Darker shade of emerald green */
+
+}
+</string>
+           </property>
+           <property name="text">
+            <string>Clear</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>475</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tableWidget_salesreturn">
+       <property name="styleSheet">
+        <string notr="true">
+QTableWidget {
+    background-color: #E6F2FF; /* Light blue for even rows */
+alternate-background-color: #B5D6F5;
+
+}
+
+QHeaderView::section {
+    background-color: #3498DB;  /* Optional: blue header */
+    color: white;
+    font-weight: bold;
+}
+
+</string>
+       </property>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

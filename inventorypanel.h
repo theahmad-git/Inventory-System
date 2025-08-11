@@ -1,7 +1,7 @@
 #ifndef INVENTORYPANEL_H
 #define INVENTORYPANEL_H
 #include <stockavailibility.h>
-#include<salesreportform.h>
+#include<salesreportform_new.h>
 
 #include <QWidget>
 

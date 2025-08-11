@@ -17,17 +17,26 @@
 #include <QFileInfo>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
-
+    : QMainWindow(parent),  // Remove the extra colon
+    ui(new Ui::MainWindow)  // Proper initialization list
 {
     ui->setupUi(this);
-    // Constructor
+    // Initialize TCP Server
+    tcpServer = new QTcpServer(this);
+    connect(tcpServer, &QTcpServer::newConnection, this, &MainWindow::newConnection);
 
-    ui->centralwidget->setMaximumSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX);
+    if (!tcpServer->listen(QHostAddress::Any, 12345)) {
+        qDebug() << "Server could not start!";
+    } else {
+        qDebug() << "Server started on port 12345";
+        qDebug() << "Connect your mobile scanner to:";
+        foreach (const QHostAddress &address, QNetworkInterface::allAddresses()) {
+            if (address.protocol() == QAbstractSocket::IPv4Protocol && !address.isLoopback())
+                qDebug() << address.toString() << ":12345";
+        }
+    }
+    // Get screen geometry properly
     QRect screenGeometry = QApplication::primaryScreen()->geometry();
-    this->setGeometry(screenGeometry);
-
     int screenWidth = screenGeometry.width();
     int screenHeight = screenGeometry.height();
     int formWidth = ui->centralwidget->width();
@@ -44,6 +53,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setBarcodeHandler(QObject *handler) {
+    currentBarcodeHandler = handler;
+}
+
+
+void MainWindow::newConnection()
+{
+    QTcpSocket *socket = tcpServer->nextPendingConnection();
+    connect(socket, &QTcpSocket::readyRead, [this, socket]() {
+        QString barcode = QString::fromUtf8(socket->readAll()).trimmed();
+        emit barcodeScanned(barcode);  // Emit the signal
+
+        if (currentBarcodeHandler) {
+            QMetaObject::invokeMethod(currentBarcodeHandler, "handleBarcode",
+                                      Q_ARG(QString, barcode));
+        }
+    });
+
+    connect(socket, &QTcpSocket::disconnected, socket, &QTcpSocket::deleteLater);
+}
 
 bool MainWindow::setupDatabase()
 {
@@ -83,20 +112,6 @@ void MainWindow::on_pushButton_3_logi_user_clicked()
     userlog -> show();
 }
 
-//void MainWindow::setupDatabase()
-//{
-
- //   QSqlDatabase db=QSqlDatabase::addDatabase("QSQLITE");
-//db.setDatabaseName("E:/sqlite/mydatabase.db");
-
-
-//if (!db.open()){
- //   QMessageBox::critical(this,"Database Error",db.lastError().text());
-
- //   return;
-// }
-// }
-
 void MainWindow::on_pushButton_add_product_clicked() {
 
 }
@@ -113,4 +128,6 @@ void MainWindow::on_pushButton_clicked()
 {
     QApplication::quit();
 }
+
+
 

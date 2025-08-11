@@ -7,6 +7,8 @@
 #include "adminpanel.h"
 #include "superadmin.h"
 
+#include <QTcpServer>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -23,6 +25,11 @@ public:
     ~MainWindow();
     void checkAvailableDrivers();
     bool setupDatabase();
+    QString lastScannedBarcode();
+    void setBarcodeHandler(QObject *handler);
+signals:
+    void barcodeScanned(const QString &barcode);
+
 
 private slots:
     void on_pushButton_loginAdmin_clicked();
@@ -30,6 +37,7 @@ private slots:
     void on_pushButton_add_product_clicked();
     void on_pushButton_superadmin_clicked();
     void on_pushButton_clicked();
+    void newConnection();
 
 
 private:
@@ -38,7 +46,9 @@ private:
     UserLogin *userlog;
     signup *signu;
     superadmin *superadminlogin;
-   // void setupDatabase();
+    QTcpServer *tcpServer;
+    QObject *currentBarcodeHandler=nullptr;
+
 
 };
 #endif

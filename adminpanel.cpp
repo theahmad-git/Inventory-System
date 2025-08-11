@@ -3,6 +3,7 @@
 #include "adminlogin.h"
 #include "signup.h"
 #include "inventorypanel.h"
+#include "mainwindow.h"
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
@@ -81,6 +82,9 @@ void adminpanel::handleSidebarClick(QTreeWidgetItem *item, int)
 
     else if (text == "🔙 Back") {
         on_pushButton_adminpanelback_clicked();
+        MainWindow *back = new MainWindow(this);
+        back->show();
+        this->close();
     }
 
     else if (text == "🔓 Logout") {
